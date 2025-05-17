@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscription - StuxStream</title>
+  <link rel="stylesheet" href="register.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <button id="toggle-sidebar" class="toggle-sidebar-btn"><i class="fas fa-bars"></i></button>
+
+  <div class="main-content">
+    <header class="header">
+      <div class="header-buttons">
+        <a href="index.html" class="btn">Accueil</a>
+        <a href="login.html" class="btn">S'identifier</a>
+        <a href="register.html" class="btn active">S'inscrire</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="login-section">
+        <h1>Créer un compte</h1>
+        <form class="login-form">
+          <input type="text" placeholder="Nom d'utilisateur" required />
+          <input type="email" placeholder="Adresse e-mail" required />
+          <input type="password" placeholder="Mot de passe" required />
+          <input type="password" placeholder="Confirmer le mot de passe" required />
+          <button type="submit">S'inscrire</button>
+        </form>
+        <p>Déjà un compte ? <a href="login.html">Connectez-vous</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 StuxStream.</p>
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

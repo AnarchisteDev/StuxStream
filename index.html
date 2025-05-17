@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StuxStream</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <button id="toggle-sidebar" class="toggle-sidebar-btn"><i class="fas fa-bars"></i></button>
+
+  <aside class="sidebar">
+    <div class="logo"><span class="red">Stux</span>Stream</div>
+    <nav class="sidebar-nav">
+      <a href="#"><i class="fas fa-home"></i> Accueil</a>
+      <a href="#"><i class="fas fa-film"></i> Films</a>
+      <a href="#"><i class="fas fa-tv"></i> Séries</a>
+      <a href="#"><i class="fas fa-video"></i> Animes</a>
+      <a href="#"><i class="fas fa-star"></i> Top IMDb</a>
+      <a href="#"><i class="fas fa-th-large"></i> Genres</a>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header class="header">
+      <div class="search-bar">
+        <input type="text" placeholder="Rechercher un film, série, anime..." />
+      </div>
+      <div class="header-buttons">
+        <a href="abonnement.html" class="btn">Abonnement</a>
+        <a href="login.html" class="btn">S'identifier</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Streaming Gratuit</h1>
+        <p>Films, Séries et Animes en streaming illimité et sans pub !</p>
+      </section>
+
+      <section class="section-title">🔥 Tendances</section>
+      <section class="content-grid">
+        <a href="minecraft.html" class="card">
+          <img src="logo/mincraft.webp" alt="Minecraft, Le Film" />
+          <h3>Minecraft, Le Film</h3>
+          <p>Familial</p>
+        </a>
+        <div class="card">
+          <img src="logo/snofall.webp" alt="Film 2" />
+          <h3>Snowfall</h3>
+          <p>Drame Crime</p>
+        </div>
+        <a href="terrifier3.html" class="card">
+          <img src="logo/Terrifier 3.webp" alt="Terrifier 3" />
+          <h3>Minecraft, Le Film</h3>
+          <p>Familial</p>
+        </a>
+      </section>
+
+      <section class="section-title">🎬 Derniers Films</section>
+      <section class="content-grid">
+        <a href="minecraft.html" class="card">
+          <img src="logo/mincraft.webp" alt="Minecraft, Le Film" />
+          <h3>Minecraft, Le Film</h3>
+          <p>Familial</p>
+        </a>
+        <div class="card">
+          <img src="logo/snofall.webp" alt="Film 2" />
+          <h3>Snowfall</h3>
+          <p>Drame Crime</p>
+        </div>
+        <a href="terrifier3.html" class="card">
+          <img src="logo/Terrifier 3.webp" alt="Terrifier 3" />
+          <h3>Minecraft, Le Film</h3>
+          <p>Familial</p>
+        </a>
+      </section>
+
+      <section class="section-title">📺 Dernières Séries</section>
+      <section class="content-grid">
+        <div class="card">
+          <img src="logo/snofall.webp" alt="Film 2" />
+          <h3>Snowfall</h3>
+          <p>Drame Crime</p>
+        </div>
+        <div class="card">
+          <img src="serie2.jpg" alt="Série 2" />
+          <h3>Lupin</h3>
+          <p>Policier, Thriller</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 StuxStream.</p>
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

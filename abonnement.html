@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abonnement - StuxStream</title>
+  <link rel="stylesheet" href="abonnement-style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Bouton toggle sidebar -->
+  <button id="toggle-sidebar" class="toggle-sidebar-btn"><i class="fas fa-bars"></i></button>
+
+  <!-- Contenu principal -->
+  <div class="main-content">
+    <div class="logo"><span class="red">Stux</span>Stream</div>
+    <header class="header">
+      <div class="header-buttons">
+        <a href="index.html" class="btn active">Accueil</a>
+        <a href="login.html" class="btn">S'identifier</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="subscription-info">
+        <h1>Nos offres d'abonnement</h1>
+        <p>Profitez de tout notre contenu en streaming sans publicité et en qualité HD.</p>
+
+        <div class="plans">
+          <div class="plan">
+            <h2>Basic</h2>
+            <p>9,99€ / mois</p>
+            <ul>
+              <li>Streaming SD</li>
+              <li>Accès illimité</li>
+              <li>1 écran à la fois</li>
+            </ul>
+            <button class="btn-subscribe">S'abonner</button>
+          </div>
+          <div class="plan">
+            <h2>Standard</h2>
+            <p>14,99€ / mois</p>
+            <ul>
+              <li>Streaming HD</li>
+              <li>Accès illimité</li>
+              <li>2 écrans simultanés</li>
+            </ul>
+            <button class="btn-subscribe">S'abonner</button>
+          </div>
+          <div class="plan">
+            <h2>Premium</h2>
+            <p>19,99€ / mois</p>
+            <ul>
+              <li>Streaming Ultra HD</li>
+              <li>Accès illimité</li>
+              <li>4 écrans simultanés</li>
+            </ul>
+            <button class="btn-subscribe">S'abonner</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 StuxStream.</p>
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

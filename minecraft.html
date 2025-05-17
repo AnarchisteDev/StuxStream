@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minecraft, Le Film - StuxStream</title>
+  <link rel="stylesheet" href="movie.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .video-container {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      background-color: black;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .video-container iframe,
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo"><span class="red">Stux</span>Stream</div>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="#">Films</a>
+        <a href="#">Séries</a>
+        <a href="#">Animes</a>
+        <a href="#">Top IMDb</a>
+        <a href="#">Genres</a>
+      </nav>
+      <div class="header-btns">
+        <a href="abonnement.html" class="btn">Abonnement</a>
+        <a href="login.html" class="btn">Connexion</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="movie-page">
+    <section class="banner" style="background-image: url('logo/mincraft2.webp');">
+      <div class="overlay"></div>
+      <div class="banner-content">
+        <h1>Minecraft, Le Film</h1>
+        <p class="sub-info">2025 | 1h 52min | Aventure, Famille</p>
+        <p class="description">
+          Une jeune héroïne et son groupe improbable de voyageurs courageux doivent sauver le monde cubique et magnifique de Minecraft du redoutable Ender Dragon.
+        </p>
+        <div class="btn-group">
+          <a href="#player" class="watch-btn" onclick="playMovie()"><i class="fas fa-play"></i> Regarder</a>
+          <a href="#" class="trailer-btn" onclick="playTrailer()"><i class="fas fa-film"></i> Bande-annonce</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conteneur de la vidéo -->
+    <div id="video-player" class="video-container"></div>
+
+    <section class="details-section">
+      <div class="container">
+        <h3>Résumé</h3>
+        <p>
+          Une jeune fille part à l’aventure pour sauver son monde après que le méchant Ender Dragon a semé la destruction. Inspiré du célèbre jeu vidéo, "Minecraft, Le Film" mélange aventure et humour pour toute la famille.
+        </p>
+        <h3>Informations</h3>
+        <ul>
+          <li><strong>Réalisateur :</strong> Jared Hess</li>
+          <li><strong>Acteurs :</strong> Jason Momoa, Emma Myers, Danielle Brooks</li>
+          <li><strong>Date de sortie :</strong> 2025</li>
+          <li><strong>Genres :</strong> Aventure, Fantastique, Famille</li>
+          <li><strong>Durée :</strong> 112 min</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 StuxStream. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script>
+    function playTrailer() {
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.style.display = "flex";
+      videoPlayer.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/embed/R59ZeaOcUbY?autoplay=1" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>`;
+    }
+
+    function playMovie() {
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.style.display = "flex";
+      videoPlayer.innerHTML = `
+        <video controls autoplay>
+          <source src="https://cinefocus.xyz/movies/Minecraft.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la lecture de vidéo.
+        </video>`;
+    }
+  </script>
+</body>
+</html>

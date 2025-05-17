@@ -1,0 +1,210 @@
+/* Reset basique */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-color: #121212;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #111;
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  transform: translateX(0);
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+.sidebar .logo .red {
+  color: #e50914;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-left: 20px;
+}
+.sidebar-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  transition: color 0.3s;
+}
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  color: #e50914;
+}
+
+/* --- BOUTON MENU BURGER --- */
+.toggle-sidebar-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* --- MAIN CONTENT --- */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* --- HEADER --- */
+.header {
+  display: flex;
+  justify-content: flex-end; /* Plus besoin de search, align à droite */
+  align-items: center;
+  margin-bottom: 30px;
+}
+.header-buttons .btn {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 18px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+.header-buttons .btn:hover,
+.header-buttons .btn.active {
+  background-color: #b00610;
+}
+
+/* --- SECTION ABONNEMENT --- */
+.subscription-info {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.subscription-info h1 {
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: white;
+}
+.subscription-info p {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.plan {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+.plan h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #e50914;
+}
+.plan p {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+.plan ul {
+  list-style-type: none;
+  margin-bottom: 25px;
+  color: #ccc;
+  text-align: left;
+}
+.plan ul li {
+  margin-bottom: 10px;
+}
+.btn-subscribe {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+.btn-subscribe:hover {
+  background-color: #b00610;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #555;
+  border-top: 1px solid #222;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  
+}
+.main-content .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0px 0 20px 0; /* margin-top, margin-right, margin-bottom, margin-left */
+  padding-left: 5;       /* enlève tout padding à gauche */
+  text-align: left;
+}
+
+.main-content .logo .red {
+  color: #e50914; /* rouge Stux */
+}
