@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'Ascension - StuxStream</title>
+  <link rel="stylesheet" href="movie.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .video-container {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      background-color: black;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .video-container iframe,
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo"><span class="red">Stux</span>Stream</div>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="#">Films</a>
+        <a href="#">Séries</a>
+        <a href="#">Animes</a>
+        <a href="#">Top IMDb</a>
+        <a href="#">Genres</a>
+      </nav>
+      <div class="header-btns">
+        <a href="abonnement.html" class="btn">Abonnement</a>
+        <a href="login.html" class="btn">Connexion</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="movie-page">
+    <section class="banner" style="background-image: url('logo/ascension.webp');">
+      <div class="overlay"></div>
+      <div class="banner-content">
+        <h1>L'Ascension</h1>
+        <p class="sub-info">2017 | 1h43min | Comédie, Aventure</p>
+        <p class="description">
+          Pour prouver son amour à Nadia, Samy décide de gravir l’Everest sans aucune expérience en alpinisme. Une aventure drôle et touchante, inspirée d’une histoire vraie.
+        </p>
+        <div class="btn-group">
+          <a href="#player" class="watch-btn" onclick="playMovie()"><i class="fas fa-play"></i> Regarder</a>
+          <a href="#" class="trailer-btn" onclick="playTrailer()"><i class="fas fa-film"></i> Bande-annonce</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conteneur de la vidéo -->
+    <div id="video-player" class="video-container"></div>
+
+    <section class="details-section">
+      <div class="container">
+        <h3>Résumé</h3>
+        <p>
+          Pour prouver son amour à Nadia, Samy décide de gravir l’Everest sans aucune expérience en alpinisme. Une aventure drôle et touchante, inspirée d’une histoire vraie.
+        </p>
+        <h3>Informations</h3>
+        <ul>
+          <li><strong>Réalisateur :</strong></li>
+          <li><strong>Acteurs :</strong></li>
+          <li><strong>Date de sortie :</strong> 2017</li>
+          <li><strong>Genres :</strong> Comédie, Aventure</li>
+          <li><strong>Durée :</strong> 1h43min </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 StuxStream. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script>
+    function playTrailer() {
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.style.display = "flex";
+      videoPlayer.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/watch?v=t_aXbjI7QuI" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>`;
+    }
+
+    function playMovie() {
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.style.display = "flex";
+      videoPlayer.innerHTML = `
+        <video controls autoplay>
+          <source src="https://cinefocus.xyz/movies/LAscension.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la lecture de vidéo.
+        </video>`;
+    }
+  </script>
+</body>
+</html>
