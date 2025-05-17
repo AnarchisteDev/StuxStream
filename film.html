@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StuxStream</title>
+  <link rel="stylesheet" href="film.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <button id="toggle-sidebar" class="toggle-sidebar-btn"><i class="fas fa-bars"></i></button>
+
+  <aside class="sidebar">
+    <div class="logo"><span class="red">Stux</span>Stream</div>
+    <nav class="sidebar-nav">
+      <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+      <a href="film.html"><i class="fas fa-film"></i> Films</a>
+      <a href="#"><i class="fas fa-tv"></i> Séries</a>
+      <a href="#"><i class="fas fa-video"></i> Animes</a>
+      <a href="#"><i class="fas fa-star"></i> Top IMDb</a>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header class="header">
+      <div class="search-bar">
+        <input type="text" placeholder="Rechercher un film...">
+          <select>
+             <option>Genre</option>
+             <option>Action</option>
+             <option>Comédie</option>
+             <option>Horreur</option>
+             <option>Science-fiction</option>
+          </select>
+        </div>
+      <div class="header-buttons">
+        <a href="abonnement.html" class="btn">Abonnement</a>
+        <a href="login.html" class="btn">S'identifier</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-title">🎬 Films</section>
+      <section class="content-grid">
+        <a href="minecraft.html" class="card">
+          <img src="logo/mincraft.webp" alt="Minecraft, Le Film" />
+          <h3>Minecraft, Le Film</h3>
+          <p>Familial</p>
+        </a>
+        <a href="terrifier3.html" class="card">
+          <img src="logo/Terrifier 3.webp" alt="Terrifier 3" />
+          <h3>Terrifier 3</h3>
+          <p>Familial</p>
+        </a>
+        <a href="vermines.html" class="card">
+          <img src="logo/VERMINES.webp" alt="VERMINES" />
+          <h3>VERMINES</h3>
+          <p>Horreur, Thriller</p>
+        </a>
+        <a href="ascension.html" class="card">
+          <img src="logo/ascension2.webp" alt="L'Ascension" />
+          <h3>L'Ascension</h3>
+          <p>Comédie, Aventure</p>
+        </a>
+      </section>
+    <footer>
+      <p>&copy; 2025 StuxStream.</p>
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-sidebar');
+    const sidebar = document.querySelector('.sidebar');
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
+  
+  <script>
+  // Fonction de filtrage
+     const searchInput = document.querySelector('.search-bar input');
+     const genreSelect = document.querySelector('.search-bar select');
+     const cards = document.querySelectorAll('.card');
+
+     function filterMovies() {
+        const searchText = searchInput.value.toLowerCase();
+        const selectedGenre = genreSelect.value;
+
+        cards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const genres = card.querySelector('p').textContent.toLowerCase();
+
+          const matchesSearch = title.includes(searchText);
+          const matchesGenre = selectedGenre === 'Genre' || genres.includes(selectedGenre.toLowerCase());
+
+          if (matchesSearch && matchesGenre) {
+            card.style.display = '';
+         } else {
+            card.style.display = 'none';
+         }
+       });
+     }
+
+      searchInput.addEventListener('input', filterMovies);
+      genreSelect.addEventListener('change', filterMovies);
+   </script>
+</body>
+</html>
