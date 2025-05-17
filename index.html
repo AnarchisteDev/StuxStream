@@ -25,6 +25,13 @@
     <header class="header">
       <div class="search-bar">
         <input type="text" placeholder="Rechercher un film, série, anime..." />
+        <select>
+             <option>Genre</option>
+             <option>Action</option>
+             <option>Comédie</option>
+             <option>Horreur</option>
+             <option>Science-fiction</option>
+          </select>
       </div>
       <div class="header-buttons">
         <a href="abonnement.html" class="btn">Abonnement</a>
@@ -113,5 +120,34 @@
       sidebar.classList.toggle('active');
     });
   </script>
+  
+  <script>
+  // Fonction de filtrage
+     const searchInput = document.querySelector('.search-bar input');
+     const genreSelect = document.querySelector('.search-bar select');
+     const cards = document.querySelectorAll('.card');
+
+     function filterMovies() {
+        const searchText = searchInput.value.toLowerCase();
+        const selectedGenre = genreSelect.value;
+
+        cards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const genres = card.querySelector('p').textContent.toLowerCase();
+
+          const matchesSearch = title.includes(searchText);
+          const matchesGenre = selectedGenre === 'Genre' || genres.includes(selectedGenre.toLowerCase());
+
+          if (matchesSearch && matchesGenre) {
+            card.style.display = '';
+         } else {
+            card.style.display = 'none';
+         }
+       });
+     }
+
+      searchInput.addEventListener('input', filterMovies);
+      genreSelect.addEventListener('change', filterMovies);
+   </script>
 </body>
 </html>
