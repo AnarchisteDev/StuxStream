@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creed - StuxStream</title>
+  <link rel="stylesheet" href="movie.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .video-container {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      background-color: black;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .video-container iframe,
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo"><span class="red">Stux</span>Stream</div>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="film.html">Films</a>
+        <a href="series.html">Séries</a>
+        <a href="#">Animes</a>
+        <a href="#">Top IMDb</a>
+      </nav>
+      <div class="header-btns">
+        <a href="abonnement.html" class="btn">Abonnement</a>
+        <a href="login.html" class="btn">Connexion</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="movie-page">
+    <section class="banner" style="background-image: url('logo/creed1img2.webp');">
+      <div class="overlay"></div>
+      <div class="banner-content">
+        <h1>Creed : L'héritage de Rocky Balboa</h1>
+        <p class="sub-info">2015 | 2h12 min | Action Drame</p>
+        <p class="description">
+          Adonis Johnson n’a jamais connu son père, le célèbre champion du monde poids lourd Apollo Creed, décédé avant sa naissance. Malgré tout, il a de toute évidence la boxe dans le sang et il se rend donc à Philadelphie, là même où Apollo Creed a affronté un adversaire ambitieux, Rocky Balboa, lors d’un match mémorable. Une fois sur place, Adonis parvient à retrouver la trace de Rocky et lui demande de devenir son entraîneur. Tout en lui expliquant qu’il n’est plus dans la course depuis longtemps, Rocky décèle chez Adonis la force et la détermination qui animaient Apollo, ce redoutable rival devenu son meilleur ami. Rocky finit par accepter d’entraîner le jeune boxeur, alors même que l’ancien champion doit affronter un adversaire bien plus terrible que tous ceux qu’il a combattus sur le ring. Grâce à Rocky, Adonis ne tarde pas à tenter de remporter le titre… Mais sera‐t‐il à même d’acquérir l’énergie et le courage nécessaires pour tout vrai boxeur qui veut monter sur le ring?
+        </p>
+        <div class="btn-group">
+          <a href="#player" class="watch-btn" onclick="playMovie()"><i class="fas fa-play"></i> Regarder</a>
+          <a href="#" class="trailer-btn" onclick="playTrailer()"><i class="fas fa-film"></i> Bande-annonce</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conteneur de la vidéo -->
+    <div id="video-player" class="video-container"></div>
+
+    <section class="details-section">
+      <div class="container">
+        <h3>Résumé</h3>
+        <p>
+          Adonis Johnson n’a jamais connu son père, le célèbre champion du monde poids lourd Apollo Creed, décédé avant sa naissance. Malgré tout, il a de toute évidence la boxe dans le sang et il se rend donc à Philadelphie, là même où Apollo Creed a affronté un adversaire ambitieux, Rocky Balboa, lors d’un match mémorable. Une fois sur place, Adonis parvient à retrouver la trace de Rocky et lui demande de devenir son entraîneur. Tout en lui expliquant qu’il n’est plus dans la course depuis longtemps, Rocky décèle chez Adonis la force et la détermination qui animaient Apollo, ce redoutable rival devenu son meilleur ami. Rocky finit par accepter d’entraîner le jeune boxeur, alors même que l’ancien champion doit affronter un adversaire bien plus terrible que tous ceux qu’il a combattus sur le ring. Grâce à Rocky, Adonis ne tarde pas à tenter de remporter le titre… Mais sera‐t‐il à même d’acquérir l’énergie et le courage nécessaires pour tout vrai boxeur qui veut monter sur le ring?
+        </p>
+        <h3>Informations</h3>
+        <ul>
+          <li><strong>Réalisateur :</strong></li>
+          <li><strong>Acteurs :</strong>Michael B. Jordan Sylvester Stallone Tessa Thompson Phylicia Rashād Andre Ward Tony Bellew Ritchie Coster Jacob 'Stitch' Duran Graham McTavish Malik Bazille Gabriel Rosado Wood Harris Buddy Osborn Rupal Pujara Brian Anthony Wilson Johanna Tolentino Tony Brice Kash Goins Clare O'Malley Kevin King Templeton Roy James Wilson Mauricio Ovalle Mark Rhino Smith Hans Marrero</li>
+          <li><strong>Date de sortie :</strong> 2015</li>
+          <li><strong>Genres :</strong>Action, Drame </li>
+          <li><strong>Durée :</strong> 2h12min </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 StuxStream. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script>
+    function playTrailer() {
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.style.display = "flex";
+      videoPlayer.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/watch?v=TFSVqMjzYhE" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>`;
+    }
+
+    function playMovie() {
+      const videoPlayer = document.getElementById("video-player");
+      videoPlayer.style.display = "flex";
+      videoPlayer.innerHTML = `
+        <video controls autoplay>
+          <source src="https://cinefocus.xyz/movies/Creed-L'heritage-de-Rocky-Balboa.mp4" type="video/mp4">
+          Votre navigateur ne prend pas en charge la lecture de vidéo.
+        </video>`;
+    }
+  </script>
+</body>
+</html>
