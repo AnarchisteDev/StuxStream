@@ -147,3 +147,58 @@ body {
   border: 1px solid white;
   color: white;
 }
+/* Inhérence du style des boutons existants */
+.dropdown .dropdown-toggle {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+
+  /* Ajoute ceci pour l'aligner */
+  margin-top: 1rem;
+}
+
+.dropdown .dropdown-toggle:hover {
+  background-color: #c40811;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 160px;
+  top: 110%;
+  right: 0;
+  z-index: 10;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+.btn-group a:nth-child(1), /* Creed II */
+.btn-group a:nth-child(2)  /* Creed III */ {
+  border-radius: 0 !important;
+}
