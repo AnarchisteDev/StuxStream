@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snowfall - StuxStream</title>
-  <link rel="stylesheet" href="movie.css" />
+  <link rel="stylesheet" href="snowfall.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     .video-container {
@@ -47,29 +47,43 @@
   </header>
 
   <main class="movie-page">
-    <section class="banner" style="background-image: url('logo/snofall.webp');">
+    <section class="banner" style="background-image: url('snofall.webp');">
       <div class="overlay"></div>
       <div class="banner-content">
-        <h1>Snowfall</h1>
+        <h1>Snowfall Saison 1</h1>
         <p class="sub-info">2017 | Drame Crime</p>
         <p class="description">
           En 1983 à Los Angeles, le crack envahit les rues : un dealer, un catcheur, un agent de la CIA et la nièce d'un parrain mexicain voient leurs routes se croiser.
         </p>
         <div class="btn-group">
-          <a href="javascript:void(0)" class="watch-btn" onclick="playMovie()"><i class="fas fa-play"></i> Regarder E1 S1</a>
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" onclick="toggleDropdown()">
-              <i class="fas fa-chevron-down"></i> Autres Saisons
-            </button>
-            <div id="dropdown-menu" class="dropdown-content">
-              <a href="">Saison 2</a>
-              <a href="">Saison 3</a>
-              <a href="">Saison 4</a>
-              <a href="">Saison 5</a>
-              <a href="">Saison 6</a>
-            </div>
+          <button class="btn dropdown-toggle" onclick="toggleDropdown('episodes-menu')">
+            <i class="fas fa-chevron-down"></i> Regarder les épisodes
+          </button>
+          <div id="episodes-menu" class="dropdown-content" style="display: none;">
+            <a href="#" onclick="playMovie('01')">E1 S1</a>
+            <a href="#" onclick="playMovie('02')">E2 S1</a>
+            <a href="#" onclick="playMovie('03')">E3 S1</a>
+            <a href="#" onclick="playMovie('04')">E4 S1</a>
+            <a href="#" onclick="playMovie('05')">E5 S1</a>
+            <a href="#" onclick="playMovie('06')">E6 S1</a>
+            <a href="#" onclick="playMovie('07')">E7 S1</a>
+            <a href="#" onclick="playMovie('08')">E8 S1</a>
+            <a href="#" onclick="playMovie('09')">E9 S1</a>
+            <a href="#" onclick="playMovie('10')">E10 S1</a>
           </div>
-        </div>              
+
+          <button class="btn dropdown-toggle" onclick="toggleDropdown('seasons-menu')">
+             <i class="fas fa-chevron-down"></i> Autres Saisons
+          </button>
+          <div id="seasons-menu" class="dropdown-content" style="display: none;">
+            <a href="#">Saison 2</a>
+            <a href="#">Saison 3</a>
+            <a href="#">Saison 4</a>
+            <a href="#">Saison 5</a>
+            <a href="#">Saison 6</a>
+         </div>
+       </div>
+     </div>              
     </section>
 
     <!-- Conteneur de la vidéo -->
@@ -121,20 +135,38 @@
         </video>`;
     }
   </script>
-  <script>
-    function toggleDropdown() {
-      const menu = document.getElementById("dropdown-menu");
-      menu.style.display = menu.style.display === "block" ? "none" : "block";
-    }
-  
-    // Ferme le menu si on clique ailleurs
-    document.addEventListener("click", function(event) {
-      const dropdown = document.querySelector(".dropdown");
-      const menu = document.getElementById("dropdown-menu");
-      if (!dropdown.contains(event.target)) {
-        menu.style.display = "none";
-      }
-    });
-  </script>  
+   <script>
+     function toggleDropdown(id) {
+      // Fermer tous les menus d'abord
+       document.querySelectorAll('.dropdown-content').forEach(menu => {
+        if (menu.id !== id) menu.style.display = 'none';
+      });
+
+       const menu = document.getElementById(id);
+       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+     } 
+
+       //Fermer les dropdowns si clic en dehors
+       document.addEventListener("click", function(event) {
+          const isButton = event.target.closest(".dropdown-toggle");
+          const isMenu = event.target.closest(".dropdown-content");
+          if (!isButton && !isMenu) {
+            document.querySelectorAll(".dropdown-content").forEach(menu => {
+              menu.style.display = "none";
+            });
+         }
+      });
+
+       // Fonction pour lire l’épisode cliqué
+       function playMovie(episodeNumber) {
+          const videoPlayer = document.getElementById("video-player");
+          videoPlayer.style.display = "flex";
+          videoPlayer.innerHTML = `
+            <video controls autoplay>
+              <source src="https://cinefocus.xyz/series/Snowfall/S01/Snowfall-S01-E${episodeNumber}.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la lecture de vidéo.
+           </video>`;
+         }
+       </script> 
 </body>
 </html>
