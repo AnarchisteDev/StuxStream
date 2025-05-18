@@ -56,10 +56,18 @@
           Adonis Johnson n’a jamais connu son père, le célèbre champion du monde poids lourd Apollo Creed, décédé avant sa naissance. Malgré tout, il a de toute évidence la boxe dans le sang et il se rend donc à Philadelphie, là même où Apollo Creed a affronté un adversaire ambitieux, Rocky Balboa, lors d’un match mémorable. Une fois sur place, Adonis parvient à retrouver la trace de Rocky et lui demande de devenir son entraîneur. Tout en lui expliquant qu’il n’est plus dans la course depuis longtemps, Rocky décèle chez Adonis la force et la détermination qui animaient Apollo, ce redoutable rival devenu son meilleur ami. Rocky finit par accepter d’entraîner le jeune boxeur, alors même que l’ancien champion doit affronter un adversaire bien plus terrible que tous ceux qu’il a combattus sur le ring. Grâce à Rocky, Adonis ne tarde pas à tenter de remporter le titre… Mais sera‐t‐il à même d’acquérir l’énergie et le courage nécessaires pour tout vrai boxeur qui veut monter sur le ring?
         </p>
         <div class="btn-group">
-          <a href="#player" class="watch-btn" onclick="playMovie()"><i class="fas fa-play"></i> Regarder</a>
-          <a href="#" class="trailer-btn" onclick="playTrailer()"><i class="fas fa-film"></i> Bande-annonce</a>
-        </div>
-      </div>
+          <a href="javascript:void(0)" class="watch-btn" onclick="playMovie()"><i class="fas fa-play"></i> Regarder</a>
+          <a href="javascript:void(0)" class="trailer-btn" onclick="playTrailer()"><i class="fas fa-film"></i> Bande-annonce</a>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" onclick="toggleDropdown()">
+              <i class="fas fa-chevron-down"></i> Autres Creed
+            </button>
+            <div id="dropdown-menu" class="dropdown-content">
+              <a href="creed2.html">Creed II</a>
+              <a href="creed3.html">Creed III</a>
+            </div>
+          </div>
+        </div>              
     </section>
 
     <!-- Conteneur de la vidéo -->
@@ -112,5 +120,20 @@
         </video>`;
     }
   </script>
+  <script>
+    function toggleDropdown() {
+      const menu = document.getElementById("dropdown-menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  
+    // Ferme le menu si on clique ailleurs
+    document.addEventListener("click", function(event) {
+      const dropdown = document.querySelector(".dropdown");
+      const menu = document.getElementById("dropdown-menu");
+      if (!dropdown.contains(event.target)) {
+        menu.style.display = "none";
+      }
+    });
+  </script>  
 </body>
 </html>
