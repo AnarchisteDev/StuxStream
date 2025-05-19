@@ -157,8 +157,8 @@ body {
   background: #e50914;
   border: none;
   color: white;
-  font-size: 17px;         /* ✅ réduit la taille de l’icône */
-  padding: 5px 9px;        /* ✅ réduit la taille du bouton */
+  font-size: 18px;         /* ✅ réduit la taille de l’icône */
+  padding: 6px 10px;        /* ✅ réduit la taille du bouton */
   cursor: pointer;
   border-radius: 4px;
   z-index: 1001;
